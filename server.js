@@ -6,6 +6,12 @@ const requestHandlers = require('./requestHandlers');
 const hostname = 'localhost';
 const port = 3000;
 
+let chainId = '';
+
+export function initialise() {
+  dcorejs.initialize({ chainId, dcoreNetworkWSPaths: ['https://testnet-api.dcore.io'] }, false);
+}
+
 function handleRequest(method, url, data) {
   if (!url) {
     return new Promise((resolve) => {
@@ -64,8 +70,10 @@ fetch('https://testnet-api.dcore.io/rpc', {
   })
 })
   .then(res => res.json())
-  .then(({ result: chainId }) => {
-    dcorejs.initialize({ chainId, dcoreNetworkWSPaths: ['https://testnet-api.dcore.io'] }, false);
+  .then(({ result }) => {
+    chainId = result;
+    initialise();
+    setInterval(initialise, 60000);
     server.listen(port, hostname, () => {
       console.log(`Server running at http://${hostname}:${port}/`);
     });

@@ -8,7 +8,7 @@ const port = 3000;
 
 let chainId = '';
 
-export function initialise() {
+function initialise() {
   dcorejs.initialize({ chainId, dcoreNetworkWSPaths: ['https://testnet-api.dcore.io'] }, false);
 }
 

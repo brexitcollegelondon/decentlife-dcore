@@ -3,10 +3,17 @@ const fetch = require('node-fetch');
 const dcorejs = require('dcorejs');
 const requestHandlers = require('./requestHandlers');
 
-const hostname = '127.0.0.1';
+const hostname = 'localhost';
 const port = 3000;
 
 function handleRequest(method, url, data) {
+  if (!url) {
+    return new Promise((resolve) => {
+      resolve({
+        statusCode: 200, contentType: "text/plain", result: "all good"
+      })
+    });
+  }
   const urlMatches = url.match(/\/(\w+)/);
   if (urlMatches.length > 1) {
     const urlRestMatches = url.match(/\/\w+(.*)/);

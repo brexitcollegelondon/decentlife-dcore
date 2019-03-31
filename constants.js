@@ -6,7 +6,7 @@ module.exports = {
   registrarAccountId: "1.2.26",
   privateKeys: {
     ["decentlife-gerald"]: "5JhgGy8dnwLv53kayaDfrNRjZ1qM4BSTGzEfhALktfurcKqXD5E",
-    ["decentlife-tiger"]: "5K5yzT3yeneGWDZKBn9cD2wBa3NqfFwSX4hoXrDPwvrXazAJ4ku",
+    ["decentlife-tiger"]: "5J3s5kTJy3pNFa87nfEKR1UV4jbqfKtc3gGjdaC6EMJxenSGkpq",
     ["decentlife-mum"]: "5KCDyrtvcfmNS3yBp4DfLLKWqTi7rouPpR6Ah1RTabpChn1GCrU",
     ["decentlife-test100"]: "5Juw8MiGvrZAvYHuqrFEb3ns6AgsHgYhhkjwnMWQa8F4J6nG7p6"
   }
